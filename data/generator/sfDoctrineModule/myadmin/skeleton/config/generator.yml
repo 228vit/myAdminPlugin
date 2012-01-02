@@ -1,0 +1,16 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+##CONFIG##
+
+    show_top_batch_actions:   true
+    show_top_form_actions:    true
+    
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

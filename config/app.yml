@@ -1,0 +1,37 @@
+all:
+  admin_plugin:
+    # specify the folder where to pick jQuery / jQuery UI / stylesheets
+    web_dir:        /myAdminPlugin
+
+    # use the javascript packaged jQuery / jQuery UI of plugin
+    # you can turn use_jquery to false and include your own lib version
+    use_jquery:     false
+
+    # specify the jQuery UI theme folder
+    theme_dir:      /myAdminPlugin/css/jquery
+
+    # Theme name
+    # (depends on theme_dir option)
+    # browse: http://jqueryui.com/themeroller/
+    theme:          redmond
+
+    # default. reset default CSS (from Blueprint CSS)
+    css_reset:      false
+
+    web_dir:                      /sfAdminDashPlugin
+    image_dir:                    /sfAdminDashPlugin/images/icons/
+    default_image:                config.png
+
+    tabs:
+      Content:
+        items:
+          News:
+            url: news
+            credentials: [[admin]]
+            icon: news.png
+          Static pages:
+            url: page
+            credentials: [[admin]]
+            icon: config.png
+
+

@@ -1,0 +1,79 @@
+# myAdminPlugin (for symfony 1.4) #
+
+The `myAdminPlugin` provides alternative admin generator.
+
+## Installation ##
+
+  * Install the plugin (via a package)
+
+        symfony plugin:install myAdminPlugin
+
+  * install via gitHub
+  
+        git clone git@github.com:228vit/myAdminPlugin.git plugins/myAdminPlugin
+
+  * Activate the plugin in the `config/ProjectConfiguration.class.php`
+  
+        [php]
+        class ProjectConfiguration extends sfProjectConfiguration
+        {
+          public function setup()
+          {
+            $this->enablePlugins(array(
+              'sfDoctrinePlugin', 
+              'myAdminPlugin',
+              '...'
+            ));
+          }
+        }
+
+  * Publish assets && symfony cc
+
+        symfony plugin:publish-assets
+        symfony cc
+
+  * generate admin with using new theme
+        symfony --theme=myadmin doctrine:generate-admin
+
+        symfony doctrine:insert-sql
+
+  **OR** if you already have an admin generator, you can simply change the theme inside your generator.yml
+
+	theme: myadmin
+    
+
+  * Enable one or more modules in your `settings.yml` (optional)
+    * For your backend application:  sfGuardUser, sfGuardGroup, sfGuardPermission
+
+              all:
+                .settings:
+                  enabled_modules:      [default, sfGuardGroup, sfGuardUser, sfGuardPermission]
+
+    * For your frontend application: sfGuardAuth
+
+              all:
+                .settings:
+                  enabled_modules:      [default, sfGuardAuth]
+
+  * Clear you cache
+
+        symfony cc
+
+  * You're done. Now, if you try to access a secure page, you will be redirected
+    to the login page.
+    If you have loaded the default fixture file, try to login with `admin` as
+    username and `admin` as password.
+
+## Manage your users, permissions and groups ##
+
+To be able to manage your users, permissions and groups, `myAdminPlugin` comes
+with 3 modules that can be integrated in your backend application.
+These modules are auto-generated thanks to the symfony admin generator.
+
+  * Enable the modules in `settings.yml`
+
+        all:
+          .settings:
+            enabled_modules: [..., sfGuardGroup, sfGuardPermission, sfGuardUser]
+
+  
