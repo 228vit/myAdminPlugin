@@ -21,8 +21,9 @@ use_helper('I18N');
 ?> 
 
 <?php if ($sf_user->isAuthenticated()): ?>
-<?php if ($sf_user->hasAnyPermission(array('admin', 'manager')) || $sf_user->isSuperAdmin()): ?>
+<?php if ($sf_user->hasPermission('admin') || $sf_user->hasPermission('manager') || $sf_user->isSuperAdmin()): ?>
 	
+<div id="adminWrap">
   <div>
     <table width="100%" style="border: 0px; padding: 0px; margin: 0px;">
       <tr>

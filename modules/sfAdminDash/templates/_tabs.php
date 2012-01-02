@@ -10,26 +10,26 @@
 <ul id="nav">
 	<?php if (sfAdminDash::hasItemsMenu($items)): ?>
 		<li><a href="#">Меню</a>
-		
 			<ul>
-        		<?php include_partial('sfAdminDash/menu_list', array('items' => $items, 'items_in_menu' => true)); ?>
-      		</ul>
-		
+        <?php include_partial('sfAdminDash/menu_list', array('items' => $items, 'items_in_menu' => true)); ?>
+      </ul>
 		</li>
 	<?php endif; ?>
 	<?php include_partial('sfAdminDash/menu_list', array('items' => $items, 'items_in_menu' => false)); ?>
-
 </ul>
 
 <?php endif; ?>
-
+<script>
+    currentModule = 'news'
+</script>
+<?php // echo $this->getModuleName().' '.$sf_context->getActionName().' '.$sf_context->getModuleName() ?>
 <?php if (count($categories)): ?>
   <ul id="mainMenu">
     <?php foreach ($categories as $name => $category): ?>
       <?php if (sfAdminDash::hasPermission($category, $sf_user)): ?>
         <?php if (sfAdminDash::hasItemsMenu($category['items'])): ?>
-          <li><a href="#<?php echo SlugifyClass::Slugify($name) ?>">
-                  <?php echo isSet($category['name']) ? $category['name'] : $name ?></a>
+          <li><a href="#<?php echo $category['id'] // SlugifyClass::Slugify($name) ?>">
+              <?php echo isSet($category['name']) ? $category['name'] : $name ?></a>
           </li>
         <?php endif; ?>
       <?php endif; ?>
@@ -37,10 +37,17 @@
   </ul>
 
   <?php foreach ($categories as $name => $category): ?>
-    <ul id="<?php echo SlugifyClass::Slugify($name) ?>" class="subMenu">
+    <ul id="<?php echo $category['id'] // SlugifyClass::Slugify($name) ?>" class="subMenu">
+      
       <?php foreach ($category['items'] as $itemName => $item): ?>
         <li><?php echo link_to($itemName, '@'.$item['url']) ?></li>
+          <?php if ($sf_context->getModuleName() == $item['url']): ?>
+          <script>
+            currentModule = '<?php echo $category['id'] ?>';
+          </script>
+          <?php endif; ?>
       <?php endforeach; // ($categories['items'] as $itemName => $item): ?>
+    
     </ul>
       <?php // include_partial('sfAdminDash/menu_list', array('items' => $category['items'], 'items_in_menu' => false)) ?>
   <?php endforeach; ?>

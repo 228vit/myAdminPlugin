@@ -7,14 +7,31 @@
     $farr = $this->getFilters();
     $sort = $this->getSort();
     $sortFld = isSet($sort[0]) ? $sort[0] : 'id';
-    $sortDir = isSet($sort[1]) ? $sort[1] : 'asc';
+    $sortPrev = isSet($sort[1]) ? $sort[1] : 'asc';
+    if ($sortPrev == 'asc')
+    {
+      $sortPrevSign = '<';
+      $sortNextSign = '>';
+      $sortNext = 'asc';
+      $sortPrev = 'desc';
+    } else {
+      $sortPrevSign = '>';
+      $sortNextSign = '<';
+      $sortNext = 'desc';
+      $sortPrev = 'asc';
+    }
     
     // get qry
     $qryPrev = $this->buildQuery();
-    $qryNext = clone $qryPrev;
+    $qryNext = $this->buildQuery();
+    
     // get prev
-    $this->prev = $qryNext->addWhere('r.'.$sortFld.' < ?', $object->$sortFld)->fetchOne();
-    $this->next = $qryPrev->addWhere('r.'.$sortFld.' > ?', $object->$sortFld)->fetchOne();
+    $this->prev = $qryPrev->addWhere('r.'.$sortFld.' '.$sortPrevSign.' ?', $object->$sortFld)
+      ->orderBy('r.'.$sortFld.' '.$sortPrev)->fetchOne();
+      
+    $this->next = $qryNext->addWhere('r.'.$sortFld.' '.$sortNextSign.' ?', $object->$sortFld)
+      ->orderBy('r.'.$sortFld.' '.$sortNext)->fetchOne();
+    //$this->next = $qryNext->addWhere('r.'.$sortFld.' < ?', $object->$sortFld)->orderBy('r.'.$sortFld.' '.$sortNext)->fetchOne();
     
     //if ($this->prev) echo '&laquo;'.$this->prev;
     //if ($this->next) echo $this->next.'&raquo;';

@@ -8,8 +8,8 @@ body {
 }
 
 .subMenu {
-    background: url("/adminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;
-/*    background: url("/adminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #99C2FF;*/
+    background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;
+/*    background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #99C2FF;*/
     border: 1px solid #2694E8;
     margin: 0;
     padding: 0;
@@ -25,9 +25,9 @@ ul.subMenu li:first-child {
     border-left: 0 none;
 }
 .ui-tabs .ui-tabs-panel {
-/*    background: url("/adminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;*/
+/*    background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;*/
     background: #99C2FF;
-/*    background: url("/adminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #99C2FF;*/
+/*    background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #99C2FF;*/
     border: 1px solid #2694E8;
     margin-left: 0;
     padding: 0.4em 1.4em 0.4em 0.5em;

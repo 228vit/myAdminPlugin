@@ -1,7 +1,7 @@
 [?php use_stylesheets_for_form($form) ?]
 [?php use_javascripts_for_form($form) ?]
 
-<div class="sf_admin_filter" title="[?php echo __('Filters') ?]">
+<div class="sf_admin_filter" title="[?php echo __('Filter', array(), 'sf_admin') ?]">
   [?php if ($form->hasGlobalErrors()): ?]
     [?php echo $form->renderGlobalErrors() ?]
   [?php endif; ?]
