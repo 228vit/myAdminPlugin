@@ -74,6 +74,6 @@ These modules are auto-generated thanks to the symfony admin generator.
 
         all:
           .settings:
-            enabled_modules: [..., sfGuardGroup, sfGuardPermission, sfGuardUser]
+            enabled_modules: [..., ping, toggler, sorter, updater]
 
   
