@@ -104,11 +104,6 @@ jQuery(document).ready(function($){
 //    });//ajax
 //  }
   
-  $("a[rel=extraPics]").lightBox({
-    imageLoading: '/images/lightbox/lightbox-ico-loading.gif',
-    imageBtnClose: '/images/lightbox/lightbox-btn-close.gif',
-    imageBtnPrev: '/images/lightbox/lightbox-btn-prev.gif',
-    imageBtnNext: '/images/lightbox/lightbox-btn-next.gif'
-  });
+  $("a[rel=extraPics]").fancybox();
   
 });
