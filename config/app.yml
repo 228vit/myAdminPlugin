@@ -3,6 +3,9 @@ all:
     # specify the folder where to pick jQuery / jQuery UI / stylesheets
     web_dir:        /myAdminPlugin
 
+    # frontend application name (frontend, front, etc..) for backlink
+    frontend_app:   false # frontend, front, etc..
+    
     # use the javascript packaged jQuery / jQuery UI of plugin
     # you can turn use_jquery to false and include your own lib version
     use_jquery:     false

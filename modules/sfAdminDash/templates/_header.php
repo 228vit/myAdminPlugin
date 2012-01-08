@@ -42,13 +42,19 @@ use_helper('I18N');
           <?php echo link_to(__('logout'), '@sf_guard_signout', array('id' => 'logoutLink'))?>
           <br />
           <?php
-          $url = sfProjectConfiguration::getActive()->generateFrontendUrl('homepage');
-          if (sfConfig::get('sf_environment') == 'dev') {
-            $url = '/frontend_dev.php'.$url;
+          if (sfConfig::get('app_admin_plugin_frontend', false))
+          {
+            $url = sfProjectConfiguration::getActive()->generateFrontendUrl('homepage');
+            if (sfConfig::get('sf_environment') == 'prod') {
+              $url = 'index.php'.$url;
+            } else {
+              // frontend_[dev|test|stage].php
+              $url = sfConfig::get('app_admin_plugin_frontend', 'frontend').'_'.sfConfig::get('sf_environment').'.php'.$url;
+            }
+            echo link_to(__('go to site'), $url, array('id' => 'gotoSiteLink'));
           }
             
           ?>
-          <?php echo link_to(__('go to site'), $url, array('id' => 'gotoSiteLink'))?>
           
         </td>
       </tr>
