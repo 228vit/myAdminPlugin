@@ -1,15 +1,12 @@
 body {
     font: 13px/1.231 arial,helvetica,clean,sans-serif;
 }
-
 .ui-widget {
     font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
     font-size: 1em;
 }
-
 .subMenu {
     background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;
-/*    background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #99C2FF;*/
     border: 1px solid #2694E8;
     margin: 0;
     padding: 0;
@@ -25,49 +22,68 @@ ul.subMenu li:first-child {
     border-left: 0 none;
 }
 .ui-tabs .ui-tabs-panel {
-/*    background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;*/
-    background: #99C2FF;
-/*    background: url("/myAdminPlugin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #99C2FF;*/
+    background: none repeat scroll 0 0 #99C2FF;
     border: 1px solid #2694E8;
     margin-left: 0;
     padding: 0.4em 1.4em 0.4em 0.5em;
 }
 .ui-corner-all {
-    -moz-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0 0;
 }
-
 #adminWrap {
-  -moz-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
 }
 #footer {
-  background: #99C2FF;
-  border-top: 1px solid #A6C9E2;
-  padding: 6px;
-  margin: 0 -3px -2px -3px;
+    background: none repeat scroll 0 0 #99C2FF;
+    border-top: 1px solid #A6C9E2;
+    margin: 0 -3px -2px;
+    padding: 6px;
 }
 #footer a {
-  font-size: 10px;
-  color: #2E6E9E;
+    color: #2E6E9E;
+    font-size: 10px;
 }
-
 #sf_admin_container {
-  padding: 4px;
+    padding: 4px;
 }
-
 #sf_admin_container div.sf_admin_actions_wrap ul.sf_admin_actions {
-  width: 60%;
-  float: left;
-  list-style: none;
+    float: left;
+    list-style: none outside none;
+    width: 60%;
 }
 #sf_admin_container div.sf_admin_actions_wrap div.sf_admin_actions_nav {
-  display: inline; 
-  text-align: right; 
-  float: left; 
-  width: 40%;
-  background: transparent;
+    background: none repeat scroll 0 0 transparent;
+    display: inline;
+    float: left;
+    text-align: right;
+    width: 40%;
 }
-
 #sf_admin_container h1 {
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
     padding: 0;
+}
+#sf_admin_container .sf_admin_form_row .content {
+}
+#sf_admin_container .help {
+    background: none repeat scroll 0 0 #FFFFCC;
+    border: 1px dotted silver;
+    display: inline;
+    margin: 0;
+    padding: 0 4px;
+    width: auto;
+}
+.required {
+    color: red;
+}
+ul.gallery {
+    margin: 0;
+}
+ul.gallery li {
+    border: 1px solid gray;
+    display: inline;
+    float: left;
+    font-size: 9px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
 }
