@@ -36,6 +36,9 @@
     <?php endforeach; ?>
     <?php endforeach; ?>
     [?php endif; ?]
+    
+    <?php echo $this->addCredentialCondition('[?php echo $helper->linkToNew('.$this->asPhp($params).') ?]', $params)."\n" ?>
+
     [?php if (!$form->isNew()): ?]
       [?php if (isSet($prev) && $prev): ?]
         <li><?php echo $this->addCredentialCondition('[?php echo link_to("&larr; ".$prev, $helper->getUrlForAction("edit"), $prev) ?]', $params=array()) ?>
