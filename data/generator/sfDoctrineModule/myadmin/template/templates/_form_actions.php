@@ -21,6 +21,9 @@
 
     <?php elseif ('_save_and_list' == $name): ?>
       <?php echo $this->addCredentialCondition('[?php echo $helper->linkToSaveAndList($form->getObject(), '.$this->asPhp($params).') ?]', $params) ?>
+    
+    <?php elseif ('_new' == $name): ?>
+      <?php echo $this->addCredentialCondition('[?php echo $helper->linkToNew('.$this->asPhp($params).') ?]', $params)."\n" ?>
 
     <?php else: ?>
       <li class="sf_admin_action_<?php echo $params['class_suffix'] ?>">
@@ -37,8 +40,6 @@
     <?php endforeach; ?>
     [?php endif; ?]
     
-    <?php echo $this->addCredentialCondition('[?php echo $helper->linkToNew('.$this->asPhp($params).') ?]', $params)."\n" ?>
-
     [?php if (!$form->isNew()): ?]
       [?php if (isSet($prev) && $prev): ?]
         <li><?php echo $this->addCredentialCondition('[?php echo link_to("&larr; ".$prev, $helper->getUrlForAction("edit"), $prev) ?]', $params=array()) ?>
